@@ -1,0 +1,15 @@
+# Log files
+*.log
+mcp-server-*.log
+
+# Binary
+flymcp
+
+# Go specific
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+*.out 
