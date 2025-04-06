@@ -12,7 +12,7 @@ A simple MCP server that wraps the `flyctl` CLI to provide Fly.io capabilities t
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/flymcp.git
+git clone https://github.com/superfly/flymcp.git
 cd flymcp
 
 # Install dependencies
