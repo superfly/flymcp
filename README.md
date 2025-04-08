@@ -27,12 +27,30 @@ go build -o flymcp
 ### Claude Desktop Setup
 
 1. Open Claude Desktop
-2. Go to Settings > Tool Providers
-3. Click "Add Tool Provider"
-4. Configure the tool provider:
-   - Name: `FlyMCP`
-   - Command: `/full/path/to/your/flymcp` (e.g., `/Users/username/code/flymcp/flymcp`)
-   - Working Directory: (optional) The directory containing your `flymcp` binary
+2. Go to the Claude menu and select "Settings..."
+3. Click on "Developer" in the left-hand bar
+4. Click on "Edit Config"
+
+This will create or open a configuration file at:
+- macOS: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- Windows: `%APPDATA%\Claude\claude_desktop_config.json`
+
+5. Add the following configuration to the file:
+
+```json
+{
+  "mcpServers": {
+    "flymcp": {
+      "command": "/full/path/to/your/flymcp",
+      "args": []
+    }
+  }
+}
+```
+
+Make sure to replace `/full/path/to/your/flymcp` with the absolute path to your flymcp binary.
+
+6. Save the file and restart Claude Desktop
 
 ### Authentication
 
@@ -77,6 +95,18 @@ Example:
   }
 }
 ```
+
+## Troubleshooting
+
+If you encounter issues with the MCP server:
+
+1. Check the logs in:
+   - macOS: `~/Library/Logs/Claude/mcp-server-flymcp.log`
+   - Windows: `%APPDATA%\Claude\logs\mcp-server-flymcp.log`
+
+2. Make sure the path to the flymcp binary is correct and absolute
+3. Ensure you have the necessary permissions to execute the binary
+4. Verify that flyctl is installed and accessible in your PATH
 
 ## Development
 
