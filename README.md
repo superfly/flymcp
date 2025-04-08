@@ -60,42 +60,6 @@ Before using the tools, make sure you're authenticated with Fly.io:
 flyctl auth login
 ```
 
-## Available Tools
-
-### fly-logs
-Returns logs for a Fly.io app or specific machine.
-
-Parameters:
-- `app` (string, required): The name of the app
-- `machine` (string, optional): The specific machine ID
-
-Example:
-```json
-{
-  "name": "fly-logs",
-  "arguments": {
-    "app": "my-app",
-    "machine": "123456"
-  }
-}
-```
-
-### fly-status
-Returns the status of a Fly.io app in JSON format.
-
-Parameters:
-- `app` (string, required): The name of the app
-
-Example:
-```json
-{
-  "name": "fly-status",
-  "arguments": {
-    "app": "my-app"
-  }
-}
-```
-
 ## Troubleshooting
 
 If you encounter issues with the MCP server:
